@@ -9,7 +9,7 @@
         title="Color key" />
     <tab
         id="@+id/tab_about"
-        title="Friends" />
+        title="About" />
     <tab
         id="@+id/tab_directions"
         title="Directions" />

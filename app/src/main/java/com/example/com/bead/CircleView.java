@@ -1,8 +1,14 @@
 package com.example.com.bead;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
+//import android.support.v4.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -13,16 +19,49 @@ import android.widget.Toast;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
-public class CircleView extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
 
+public class CircleView extends AppCompatActivity
+        implements ColorCodeFragment.OnFragmentInteractionListener,
+        AboutFragment.OnFragmentInteractionListener,
+        BlankFragment.OnFragmentInteractionListener
+{
+
+
+    ColorCodeFragment fragmentColorCode;
+    AboutFragment fragmentAbout;
+    BlankFragment fragmentBlank;
+    //FragmentManager fm;
+    FragmentManager fragmentManager;
+
+    FragmentTransaction ft;
+
+    List<Fragment> activeCenterFragments;
+
+
+    FragmentManager ftTry;
+
+
+    Fragment fragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_circle_view);
 
+        fragmentColorCode = new ColorCodeFragment();
+        fragmentAbout = new AboutFragment();
+        fragmentBlank =  new BlankFragment();
+        //fm = getFragmentManager();
+        fragmentManager = getFragmentManager();
+
+
+
+
         final FrameLayout main = (FrameLayout)findViewById(R.id.main);
 
         int numViews = 32;
+        /*
         for(int i = 1; i <= numViews; i++)
         {
             // Create some quick TextViews that can be placed.
@@ -80,22 +119,67 @@ public class CircleView extends AppCompatActivity {
             // Set the rotation of the view.
             v.setRotation(angleDeg + 90.0f);
             main.addView(v);
+            /
         }
+        */
 
 
         BottomBar bottomBar = (BottomBar) findViewById(R.id.bottomBar);
+
+
+
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {
+
+
+                ftTry = getFragmentManager();
+
+
+                ft = fragmentManager.beginTransaction();
+
                 if (tabId == R.id.tab_home){
+                    /*
+                    ft.replace(R.id.major, fragmentColorCode);
+                    ft.commit();
+                    if (ft!= null ){
+                        Toast.makeText(CircleView.this, "No null", Toast.LENGTH_SHORT).show();
+                    }
+
+                    */
+                    fragment = fragmentBlank;
+                    ftTry.beginTransaction().replace(R.id.major, fragment).commit();
 
                 }else if (tabId == R.id.tab_colorkey){
 
+                    /*
+                    if (fragmentColorCode.isAdded()){
+                        return;
+                    }
+
+                    ft.replace(R.id.major, fragmentColorCode);
+                    //activeCenterFragments.add(colorFragment);
+                    ft.addToBackStack(null);
+                    ft.commit();
+
+                    */
+                    fragment = fragmentColorCode;
+                    ftTry.beginTransaction().replace(R.id.major, fragment).commit();
+
                 }else if (tabId == R.id.tab_about){
+                    /*
+                    ft.replace(R.id.major, fragmentAbout);
+                    ft.commit();
+                    */
+
+                    fragment = fragmentAbout;
+                    ftTry.beginTransaction().replace(R.id.major, fragment).commit();
 
                 }else if (tabId == R.id.tab_directions){
 
                 }
+
+
             }
         });
 
@@ -103,4 +187,28 @@ public class CircleView extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
+
+
+    //Removing all fragments
+
+    private void removeActiveCenterFragments() {
+        activeCenterFragments = new ArrayList<Fragment>();
+        if (activeCenterFragments.size() > 0) {
+            //fragmentTransaction = fragmentManager.beginTransaction();
+            for (Fragment activeFragment : activeCenterFragments) {
+                ft.remove(activeFragment);
+            }
+            activeCenterFragments.clear();
+            ft = fragmentManager.beginTransaction();
+            ft.addToBackStack(null);
+            ft.commit();
+        }
+    }
+
+
 }

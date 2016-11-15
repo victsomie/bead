@@ -2,14 +2,35 @@
     <string name="app_name">CycleBeads</string>
     <string name="welcome">
 
-        The CyycleBeads app will help you track your cycle.
+        "<b>About this method</b>\n\n"
+        "The cycleBeads App helps a woman use the Standards Days Method,  a fertility awareness-based family planning method.\n\n"
 
-        You can use it to prevent pregnancy. It\'s based on a scientific proven, family planning method that is +95%
-         effective.
+        "The method was developed by the Institute for Reproductive Health at Georgetown University
+        and is designed to be easy and effective way for womedn to plan or prevent pregnancy naturally.\n\n"
 
-        Lets get started.
+        "The CycleBeads app will help you track your cycle. \n\n"
+
+        "You can use it to prevent pregnancy. It\'s based on a scientific proven, family planning method that is +95%
+         effective.\n\n"
+
+        "Lets get started.\n\n"
+
+        "<b>Efficacy</b>\n\n"
+
+        "\n\n\n\n\n"
+
+        "<b>Medical criteria</b>"
+
+        "\n\n\n\n\n\n\n\n"
+        "<b>Cycle Histroy</b>\n\n"
+        "\n\n\n\n\n\n\n\n"
+
+        "<b>Notes</b>\n\n"
+
+        "\n\n\n\n\n\n\n\n"
+
     </string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">Day Status Color Key</string>
 </resources>

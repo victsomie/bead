@@ -8,7 +8,119 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/bb_darkBackgroundColor"
-        android:text="@string/hello_blank_fragment" />
+        android:text="@string/hello_blank_fragment"
+        android:gravity="center_horizontal"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="@dimen/activity_vertical_margin">
+        <LinearLayout
+            android:id="@+id/colorhint1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btn_color_cyclestart"
+                android:layout_width="0dp"
+                android:layout_weight="@integer/colorcode_btn_weight"
+                android:layout_height="wrap_content"
+
+                android:backgroundTint="@color/colorRed"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="@integer/colorcode_txt_weight"
+                android:text="Cycle Start\n Day 1"
+                android:gravity="top"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/colorhint2"
+            android:layout_below="@+id/colorhint1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btn_color_cyclepossible"
+                android:layout_width="0dp"
+                android:layout_weight="@integer/colorcode_btn_weight"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorUnlikey"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="@integer/colorcode_txt_weight"
+                android:text="Pregnancy Unlikely \n Days 2-7, 20-End of cycle"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/colorhint3"
+            android:layout_below="@+id/colorhint2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btn_color_cyclefirstdaypossible"
+                android:layout_width="0dp"
+                android:layout_weight="@integer/colorcode_btn_weight"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="@integer/colorcode_txt_weight"
+                android:text="Pregnancy Possible \n Days 8-19"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/colorhint4"
+            android:layout_below="@+id/colorhint3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btn_color_cyclecouldStart"
+                android:layout_width="0dp"
+                android:layout_weight="@integer/colorcode_btn_weight"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorBrown"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="@integer/colorcode_txt_weight"
+                android:text="First Day New Cycle Could Start\Day 27"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/colorhint5"
+            android:layout_below="@+id/colorhint4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btn_color_cycleNote"
+                android:layout_width="0dp"
+                android:layout_weight="@integer/colorcode_btn_weight"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorYellow"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="@integer/colorcode_txt_weight"
+                android:text="Note"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/colorhint6"
+            android:layout_below="@+id/colorhint5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btn_color_cycleToday"
+                android:layout_width="0dp"
+                android:layout_weight="@integer/colorcode_btn_weight"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorGreen"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="@integer/colorcode_txt_weight"
+                android:text="Today"/>
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </FrameLayout>
