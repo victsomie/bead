@@ -1,6 +1,7 @@
 package com.example.com.bead;
 
 import android.os.Build;
+import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -8,6 +9,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.OnTabSelectListener;
 
 public class CircleView extends AppCompatActivity {
 
@@ -77,6 +81,26 @@ public class CircleView extends AppCompatActivity {
             v.setRotation(angleDeg + 90.0f);
             main.addView(v);
         }
+
+
+        BottomBar bottomBar = (BottomBar) findViewById(R.id.bottomBar);
+        bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
+            @Override
+            public void onTabSelected(@IdRes int tabId) {
+                if (tabId == R.id.tab_home){
+
+                }else if (tabId == R.id.tab_colorkey){
+
+                }else if (tabId == R.id.tab_about){
+
+                }else if (tabId == R.id.tab_directions){
+
+                }
+            }
+        });
+
+
+
 
     }
 }

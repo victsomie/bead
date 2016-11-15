@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <tab
+        id="@+id/tab_home"
+        title="Home" />
+    <tab
+        id="@+id/tab_colorkey"
+        title="Color key" />
+    <tab
+        id="@+id/tab_about"
+        title="Friends" />
+    <tab
+        id="@+id/tab_directions"
+        title="Directions" />
+</tabs>
