@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menu_add_start_cycle"
+        android:title="Add Start of day" />
+
+    <item android:id="@+id/menu_calenderview"
+        android:title="Calendar View"
+        app:showAsAction="always"/>
+</menu>

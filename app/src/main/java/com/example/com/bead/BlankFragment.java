@@ -1,4 +1,8 @@
+
 package com.example.com.bead;
+
+
+import android.widget.FrameLayout;
 
 import android.content.Context;
 import android.net.Uri;
@@ -86,19 +90,25 @@ public class BlankFragment extends android.app.Fragment {
 
 
             // Set a text and center it in each view.
-            v.setText("" + i);
+            //v.setText("");
 
             v.setGravity(Gravity.CENTER);
 
-            if (i<5){
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                    v.setBackground(getResources().getDrawable(R.drawable.bead_bg_safe));
-                }
-            } else if (i>20) {
+            if (i==1){
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     v.setBackground(getResources().getDrawable(R.drawable.bead_bg_notsafe));
                 }
-            }else {
+            }else if (i<8){
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    v.setBackground(getResources().getDrawable(R.drawable.bead_bg_safe));
+                    //v.setBackground(getResources().getDrawable(R.drawable.bead_bg_safe));
+                }
+            }else if (i<19){
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    v.setBackground(getResources().getDrawable(R.drawable.bead_bg));
+                    //v.setBackground(getResources().getDrawable(R.drawable.bead_bg_safe));
+                }
+            } else {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     v.setBackground(getResources().getDrawable(R.drawable.bead_bg));
                 }
@@ -115,10 +125,10 @@ public class BlankFragment extends android.app.Fragment {
                     Toast.makeText(getActivity(),  j, Toast.LENGTH_SHORT).show();
                 }
             });
-            v.setPadding(2,2, 2,2);
+            v.setPadding(1,1, 1,1);
             // Force the views to a nice size (150x100 px) that fits my display.
             // This should of course be done in a display size independent way.
-            FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(100, 100);
+            FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(70, 70);
             // Place all views in the center of the layout. We'll transform them
             // away from there in the code below.
             //lp.gravity = Gravity.CENTER;

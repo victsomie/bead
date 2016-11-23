@@ -9,7 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/hello_blank_fragment"
-        android:gravity="center_horizontal"/>
+        android:gravity="center_horizontal"
+        android:textSize="25sp"
+        android:fontFamily="serif-monospace"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -25,13 +27,12 @@
                 android:layout_width="0dp"
                 android:layout_weight="@integer/colorcode_btn_weight"
                 android:layout_height="wrap_content"
-
                 android:backgroundTint="@color/colorRed"/>
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="@integer/colorcode_txt_weight"
-                android:text="Cycle Start\n Day 1"
+                android:text="@string/main_welcome"
                 android:gravity="top"/>
         </LinearLayout>
 

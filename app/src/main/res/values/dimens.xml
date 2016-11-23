@@ -5,4 +5,5 @@
 
     <integer name="colorcode_btn_weight">1</integer>
     <integer name="colorcode_txt_weight">6</integer>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

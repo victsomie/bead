@@ -30,7 +30,9 @@
         "\n\n\n\n\n\n\n\n"
 
     </string>
+    <string name="main_welcome">"Track Your Cycle\n Natural Family Planning"</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Day Status Color Key</string>
+    <string name="title_activity_calender">CalenderActivity</string>
 </resources>

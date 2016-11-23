@@ -5,16 +5,14 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 //import android.support.v4.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.View;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.FrameLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
@@ -211,4 +209,28 @@ public class CircleView extends AppCompatActivity
     }
 
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.my_menu, menu);
+
+        //return super.onCreateOptionsMenu(menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.menu_calenderview:
+                Intent toCalenderActivity = new Intent(CircleView.this, CalendarActivity.class);
+                startActivity(toCalenderActivity);
+                return  true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+
+    }
 }
